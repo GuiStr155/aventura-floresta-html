@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aventura Mágica</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        .image {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Aventura Mágica</h1>
+    <p>Embarque nessa jornada fantástica!</p>
+</header>
+
+<div class="container">
+    <div class="section" id="section1">
+        <h2>Capítulo 1: A Entrada do Bosque</h2>
+        <p>Você está diante de um bosque misterioso. As árvores são tão altas que bloqueiam a luz do sol, criando uma atmosfera enigmática. O que você decide fazer?</p>
+        <img src="https://via.placeholder.com/800x400.png?text=Bosque+Misterioso" alt="Bosque Misterioso" class="image">
+        <br><br>
+        <button class="button" onclick="nextChapter(2)">Entrar no bosque</button>
+        <button class="button" onclick="nextChapter(3)">Voltar para a cidade</button>
+    </div>
+
+    <div class="section" id="section2" style="display: none;">
+        <h2>Capítulo 2: O Encontro com o Guardião</h2>
+        <p>Dentro do bosque, você encontra uma criatura estranha, um guardião com olhos brilhantes. Ele fala com uma voz profunda: "Aqueles que desejam passar devem responder a um enigma".</p>
+        <img src="https://via.placeholder.com/800x400.png?text=Guardião+do+Bosque" alt="Guardião" class="image">
+        <br><br>
+        <button class="button" onclick="nextChapter(4)">Aceitar o desafio</button>
+        <button class="button" onclick="nextChapter(5)">Desistir e voltar</button>
+    </div>
+
+    <div class="section" id="section3" style="display: none;">
+        <h2>Capítulo 3: O Retorno à Cidade</h2>
+        <p>Você decide voltar para a cidade. A jornada no bosque ficou para outra vez. Mas você sente que o destino chamará novamente.</p>
+        <img src="https://via.placeholder.com/800x400.png?text=Cidade+Segura" alt="Cidade Segura" class="image">
+        <br><br>
+        <button class="button" onclick="nextChapter(1)">Recomeçar a aventura</button>
+    </div>
+
+    <div class="section" id="section4" style="display: none;">
+        <h2>Capítulo 4: O Enigma do Guardião</h2>
+        <p>O guardião diz: "O que é leve como uma pluma, mas ninguém pode segurar por muito tempo?" Você pensa na resposta... Qual será?</p>
+        <p><strong>Resposta: O fôlego.</strong></p>
+        <img src="https://via.placeholder.com/800x400.png?text=Enigma+do+Guardião" alt="Enigma" class="image">
+        <br><br>
+        <button class="button" onclick="nextChapter(6)">Responder e continuar</button>
+    </div>
+
+    <div class="section" id="section5" style="display: none;">
+        <h2>Capítulo 5: O Fim da Jornada</h2>
+        <p>Você decide que não está pronto para enfrentar os desafios e retorna para a cidade. Aventura adiada, mas não esquecida!</p>
+        <img src="https://via.placeholder.com/800x400.png?text=Fim+da+Jornada" alt="Fim da Jornada" class="image">
+        <br><br>
+        <button class="button" onclick="nextChapter(1)">Recomeçar a aventura</button>
+    </div>
+
+    <div class="section" id="section6" style="display: none;">
+        <h2>Capítulo 6: O Tesouro</h2>
+        <p>O guardião sorri e, com um gesto mágico, abre um portal para um tesouro escondido. Você encontrou o grande prêmio da sua jornada!</p>
+        <img src="https://via.placeholder.com/800x400.png?text=Tesouro+Mágico" alt="Tesouro" class="image">
+        <br><br>
+        <button class="button" onclick="nextChapter(1)">Recomeçar a aventura</button>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 Aventura Mágica. Todos os direitos reservados.</p>
+</footer>
+
+<script>
+    function nextChapter(chapter) {
+        // Esconde todas as seções
+        for (let i = 1; i <= 6; i++) {
+            document.getElementById('section' + i).style.display = 'none';
+        }
+        // Exibe a seção do capítulo atual
+        document.getElementById('section' + chapter).style.display = 'block';
+    }
+
+    // Inicializa a aventura com o Capítulo 1
+    nextChapter(1);
+</script>
+
+</body>
+</html>
